@@ -1,0 +1,30 @@
+
+nc: 14
+scale: l
+scales:
+  l: [1.00, 1.00, 512]
+
+backbone:
+  - [-1, 1, TorchVision, [320, mobilenet_v2, DEFAULT, True, 2, True]]
+  # MobileNetV2 feature maps: stride 8 (32 ch), stride 16 (96 ch), stride 32 (320 ch).
+  # Index = nomor features[k] + 1 (karena y[0] adalah input).
+  - [0, 1, Index, [32, 7]]     # P3/8  = features[6]
+  - [0, 1, Index, [96, 14]]    # P4/16 = features[13]
+  - [0, 1, Index, [320, 18]]   # P5/32 = features[17]
+  - [-1, 1, SPPF, [320, 5]]
+  - [-1, 2, C2PSA, [320]]
+
+head:
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 2], 1, Concat, [1]]
+  - [-1, 2, C3k2, [512, False]]
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 1], 1, Concat, [1]]
+  - [-1, 2, C3k2, [256, False]]
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 8], 1, Concat, [1]]
+  - [-1, 2, C3k2, [512, False]]
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 5], 1, Concat, [1]]
+  - [-1, 2, C3k2, [1024, True]]
+  - [[11, 14, 17], 1, Detect, [nc]]

@@ -1,0 +1,53 @@
+{
+    "dataset_name": "LeukemiaAttri_YOLO",
+    "dataset_root": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO",
+    "source_yaml": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/data.yaml",
+    "resolved_yaml": "/home/mf/Documents/jull/hil/hil1/summary/data_fixed.yaml",
+    "model_name": "yolo11l.pt",
+    "number_of_classes": 14,
+    "class_names": {
+        "0": "None",
+        "1": "Myeloblast",
+        "2": "Lymphoblast",
+        "3": "Neutrophil",
+        "4": "Atypical lymphocyte",
+        "5": "Promonocyte",
+        "6": "Monoblast",
+        "7": "Lymphocyte",
+        "8": "Myelocyte",
+        "9": "Abnormal promyelocyte",
+        "10": "Monocyte",
+        "11": "Metamyelocyte",
+        "12": "Eosinophil",
+        "13": "Basophil"
+    },
+    "train_path": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/train",
+    "validation_path": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/val",
+    "test_path": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/test",
+    "dataset_counts": {
+        "train": {
+            "images": 13142,
+            "label_files": 13142,
+            "images_without_label_file": 0,
+            "labels_without_image": 0
+        },
+        "val": {
+            "images": 2816,
+            "label_files": 2816,
+            "images_without_label_file": 0,
+            "labels_without_image": 0
+        },
+        "test": {
+            "images": 2817,
+            "label_files": 2817,
+            "images_without_label_file": 0,
+            "labels_without_image": 0
+        }
+    },
+    "manifest_path": "/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/dataset_manifest.csv",
+    "ultralytics_version": "8.4.189",
+    "pytorch_version": "2.14.1+cu130",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+    "created_at": "2026-10-26T12:54:16.356213"
+}
