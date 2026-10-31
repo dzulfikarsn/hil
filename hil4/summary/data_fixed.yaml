@@ -1,0 +1,20 @@
+train: /home/esr/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/train
+val: /home/esr/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/val
+test: /home/esr/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO/images/test
+names:
+  0: None
+  1: Myeloblast
+  2: Lymphoblast
+  3: Neutrophil
+  4: Atypical lymphocyte
+  5: Promonocyte
+  6: Monoblast
+  7: Lymphocyte
+  8: Myelocyte
+  9: Abnormal promyelocyte
+  10: Monocyte
+  11: Metamyelocyte
+  12: Eosinophil
+  13: Basophil
+nc: 14
+path: /home/esr/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1/LeukemiaAttri_YOLO

@@ -8,12 +8,12 @@ import pandas as pd
 
 
 DATASET_NAME = "LeukemiaAttri_YOLO"
-MODEL_NAME = "yolo11l.pt"
+MODEL_NAME = "yolo11n.pt"
 
-KAGGLE_INPUT = Path("/home/mf/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1")
+KAGGLE_INPUT = Path("/home/esr/.cache/kagglehub/datasets/albatani/leukemiaattri-yolo-train-val-test/versions/1")
 
 OUTPUT_ROOT = Path(
-    "/home/mf/Documents/jull/hil/hil2"
+    "/home/esr/isim/hil/hil4"
 )
 
 TRAIN_DIR = OUTPUT_ROOT / "training"
@@ -398,7 +398,7 @@ print("Model        :", MODEL_NAME)
 print("Device       :", DEVICE)
 
 print("\nDataset configuration validated successfully!")
-print("Ready for yolo11l training.")
+print("Ready for yolo11n training.")
 
 from pathlib import Path
 import torch
@@ -410,7 +410,7 @@ train_results = model.train(
     data=str(DATA_YAML_FIXED),
     epochs=150,
     project=str(TRAIN_DIR),
-    name="yolo11l",
+    name="yolo11n",
     device=DEVICE,
     plots=True,
     save=True,
@@ -440,7 +440,7 @@ val_results = best_model.val(
     device=DEVICE,
     plots=True,
     project=str(VAL_DIR),
-    name="yolo11l_best",
+    name="yolo11n_best",
     exist_ok=True,
 )
 
@@ -452,6 +452,6 @@ test_results = test_model.val(
     device=DEVICE,
     plots=True,
     project=str(TEST_DIR),
-    name="yolo11l_test",
+    name="yolo11n_test",
     exist_ok=True,
 )
